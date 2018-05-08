@@ -13,8 +13,16 @@ Denne demo består af:
 Det eneste du skal gøre er: 
 * Installer Docker https://store.docker.com/search?type=edition&offering=community
 * Køre følgende commandoer
+
+### Uden GIT
+Hent og udpak filen https://github.com/nielspeter/nine-docker-workshop/archive/master.zip
 ```
-> git clone git@github.com:nielspeter/nine-docker-workshop.git
+> cd nine-docker-workshop
+> docker-compose up -d
+```
+### Med GIT
+```
+> git clone git@github.com:nielspeter/nine-docker-workshop.git 
 > cd nine-docker-workshop
 > docker-compose up -d
 ```
