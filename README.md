@@ -27,4 +27,4 @@ Hent og udpak filen https://github.com/nielspeter/nine-docker-workshop/archive/m
 > cd nine-docker-workshop
 > docker-compose up -d
 ```
-* Åben din browser og skriv URL http://localhost:8080 (obs! Det kan tage 10-20 sekunder for applikationen er klar)
+* Åben din browser og skriv URL http://localhost:8080 (obs! Det kan tage 10-20 sekunder før applikationen er klar)
