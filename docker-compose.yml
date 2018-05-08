@@ -1,0 +1,28 @@
+version: '3.6'
+
+services:
+
+  mysql:
+    image: mysql:5.7
+    environment:
+      - MYSQL_ROOT_PASSWORD=mysql
+      - MYSQL_DATABASE=nine-nyt
+      - MYSQL_USER=nine-nyt
+      - MYSQL_PASSWORD=nine-nyt
+
+  elasticsearch:
+    image: blacktop/elasticsearch:5.4
+
+  kibana:
+    image: blacktop/kibana:5.4
+    ports:
+      - 5601:5601
+    depends_on:
+      [elasticsearch]
+
+  nine-nyt:
+    image: nielspeter/nine-nyt:0.1
+    ports:
+      - 8080:8080
+    depends_on:
+      [elasticsearch]
