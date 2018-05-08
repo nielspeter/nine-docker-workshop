@@ -6,7 +6,7 @@ For dig som gerne vil vide noget mere om Docker.
  
 Denne demo består af:
 *	MySql
-*	Elastisearch
+*	Elasticsearch
 *	Kibana
 *	Grails applikation (nine-nyt) 
 
