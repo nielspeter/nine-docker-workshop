@@ -12,8 +12,7 @@ Denne demo består af:
 
 Det eneste du skal gøre er: 
 * Installer Docker https://store.docker.com/search?type=edition&offering=community
-* OBS! Se til at Docker har min 4GB ram tildelt.
- ** På Mac er det under Docer -> Preferences -> Advanced
+* OBS! Se til at Docker har min 4GB ram tildelt. (På Mac er det under Docker -> Preferences -> Advanced)
 * Køre følgende commandoer
 
 ### Uden GIT
