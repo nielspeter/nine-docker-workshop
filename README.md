@@ -11,7 +11,7 @@ Denne demo består af:
 *	Grails applikation (nine-nyt) 
 
 Det eneste du skal gøre er: 
-* Installere er Docker https://store.docker.com/search?type=edition&offering=community
+* Installer Docker https://store.docker.com/search?type=edition&offering=community
 * Køre følgende commandoer
 ```
 > git clone git@github.com:nielspeter/nine-docker-workshop.git
