@@ -1,2 +1,3 @@
-# nine-docker-workshop
-Nine Docker Workshop
+# Nine Docker Workshop
+
+docker-compose up -d
