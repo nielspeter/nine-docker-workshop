@@ -36,14 +36,14 @@ Docker API / REST
 Docker info
 
 ```
-curl --unix-socket /var/run/docker.sock http://localhost/info | jq
-curl --unix-socket /var/run/docker.sock http://localhost/info | jq -r '.Containers'
+$ curl --unix-socket /var/run/docker.sock http://localhost/info | jq
+$ curl --unix-socket /var/run/docker.sock http://localhost/info | jq -r '.Containers'
 ```
 
 List alle containers
 
 ```
-curl --unix-socket /var/run/docker.sock http://localhost/containers/json | jq
+$ curl --unix-socket /var/run/docker.sock http://localhost/containers/json | jq
 ```
 
 Docker Python
@@ -53,9 +53,10 @@ Docker Python
 Kør en container
 
 ```
-import docker
-client = docker.from_env()
-client.containers.run("hello-world")
+$ python
+>>> import docker
+>>> client = docker.from_env()
+>>> client.containers.run("hello-world")
 ```
 
 Docker Web GUI
@@ -165,7 +166,7 @@ Arbejde med en kørende container
 Start en container med bagrundsprocess
 
 ```
-docker run -d --name hello nginxdemos/hello
+$ docker run -d --name hello nginxdemos/hello
 ```
 
 Se logfiler
@@ -223,13 +224,13 @@ A /var/run/nginx.pid
 Kopiere en fil fra container til lokale maskine
 
 ```
-$docker container cp hello:a.txt .
+$ docker container cp hello:a.txt .
 ```
 
 Kopiere en fil fra lokale maskine til container
 
 ```
-docker container cp hello:a.txt .
+$ docker container cp hello:a.txt .
 ```
 
 Stop
