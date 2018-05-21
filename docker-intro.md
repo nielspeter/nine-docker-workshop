@@ -31,7 +31,7 @@ $ docker --help
 
 Docker API / REST
 ---
-[Docker API/REST] (https://docs.docker.com/engine/api/v1.24/)
+[Docker API/REST](https://docs.docker.com/engine/api/v1.24/)
 
 Docker info
 
@@ -48,7 +48,7 @@ curl --unix-socket /var/run/docker.sock http://localhost/containers/json | jq
 
 Docker Python
 ---
-[Docker Python] (https://github.com/docker/docker-py)
+[Docker Python](https://github.com/docker/docker-py)
 
 Kør en container
 
