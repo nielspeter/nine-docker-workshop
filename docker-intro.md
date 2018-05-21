@@ -389,6 +389,12 @@ Container netværks kommunikation
 
 [Docker Network doc](https://docs.docker.com/network/)
 
+Brug lokale 'host' netværk (uden -p denne gang)
+
+```
+docker create --network=host --name hello nginxdemos/hello
+```
+
 Opret et netværk
 
 ```
