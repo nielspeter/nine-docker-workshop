@@ -60,9 +60,10 @@ client.containers.run("hello-world")
 
 Docker Web GUI
 ---
+[portainer.io](https://portainer.io)
 
 ```
-$ docker container run -d -p 9000:9000 -v /var/run/docker.sock:/var/run/docker.sock portainer/portainer
+$ docker container run -d -p 9000:9000 --name portainer -v /var/run/docker.sock:/var/run/docker.sock portainer/portainer
 ```
 
 
