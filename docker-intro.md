@@ -392,7 +392,7 @@ Container netværks kommunikation
 Brug lokale 'host' netværk (uden -p denne gang)
 
 ```
-docker create --network=host --name hello nginxdemos/hello
+$ docker run --rm --network=host nginxdemos/hello
 ```
 
 Opret et netværk
