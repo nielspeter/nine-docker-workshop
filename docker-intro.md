@@ -10,6 +10,15 @@ Man kan dog connect til denne linux VM direkte på følgende måde:
 $ docker run --rm -it --privileged --pid=host ubuntu nsenter -t 1 -m -u -n -i sh
 ```
 
+På Docker hosten er Docker root:
+
+```
+/var/lib/docker/
+```
+```
+# ls /var/lib/docker/
+builder  containerd  containers  image  network  overlay2  plugins  runtimes  swarm  tmp  trust  volumes
+```
 
 Docker CLI
 ---
@@ -18,6 +27,42 @@ Demo CLI Help
 
 ```
 $ docker --help
+```
+
+Docker API / REST
+---
+[Docker API/REST] (https://docs.docker.com/engine/api/v1.24/)
+
+Docker info
+
+```
+curl --unix-socket /var/run/docker.sock http://localhost/info | jq
+curl --unix-socket /var/run/docker.sock http://localhost/info | jq -r '.Containers'
+```
+
+List alle containers
+
+```
+curl --unix-socket /var/run/docker.sock http://localhost/containers/json | jq
+```
+
+Docker Python
+---
+[Docker Python] (https://github.com/docker/docker-py)
+
+Kør en container
+
+```
+import docker
+client = docker.from_env()
+client.containers.run("hello-world")
+```
+
+Docker Web GUI
+---
+
+```
+$ docker container run -d -p 9000:9000 -v /var/run/docker.sock:/var/run/docker.sock portainer/portainer
 ```
 
 
