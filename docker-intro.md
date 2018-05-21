@@ -510,3 +510,151 @@ $ docker stop nine-nginx
 ```
 
 
+Docker Compose
+---
+
+Gå til 
+
+```
+$ cd docker-compose/nginx-1
+```
+
+Tjek om docker-compose file er valid
+
+
+```
+$ docker-compose config
+```
+
+Kør services
+
+```
+$ docker-compose up -d
+Creating network "nginx1_default" with the default driver
+Pulling nginx (nginx:latest)...
+latest: Pulling from library/nginx
+f2aa67a397c4: Pull complete
+3c091c23e29d: Pull complete
+4a99993b8636: Pull complete
+Digest: sha256:0fb320e2a1b1620b4905facb3447e3d84ad36da0b2c8aa8fe3a5a81d1187b884
+Status: Downloaded newer image for nginx:latest
+Creating nginx1_nginx_1 ... 
+Creating nginx1_nginx_1 ... done
+```
+
+List containers
+
+```
+$ docker-compose ps
+```
+
+Se logs 
+
+```
+$ docker-compose logs
+```
+
+Stop alle services
+
+```
+$ docker-compose stop
+```
+
+Stop alle services og slet alle networks, volumes, containers
+
+```
+$ docker-compose down
+Stopping nginx1_nginx_1 ... done
+Removing nginx1_nginx_1 ... done
+Removing network nginx1_default
+```
+
+Docker Machine 
+---
+
+Docker Machine Drivers
+
+* Amazon Web Services
+* Microsoft Azure
+* Digital Ocean
+* Exoscale
+* Google Compute Engine
+* Generic
+* Microsoft Hyper-V
+* OpenStack
+* Rackspace
+* IBM Softlayer
+* Oracle VirtualBox
+* VMware vCloud Air
+* VMware Fusion
+* VMware vSphere
+* VMware Workstation (unofficial plugin, not supported by Docker)
+* Grid 5000 (unofficial plugin, not supported by Docker)
+
+Opret en 'maskine' hos Digital Ocean
+
+```
+docker-machine create --driver digitalocean --digitalocean-access-token <token> --digitalocean-region=ams3 --digitalocean-size=4gb node1
+```
+
+Opret en 'maskine' (vm) lokalt via virtualbox 
+
+[Virtualbox download](https://www.virtualbox.org/wiki/Downloads)
+
+```
+$ docker-machine create --driver virtualbox node1
+Running pre-create checks...
+Creating machine...
+(node1) Copying /Users/nps/.docker/machine/cache/boot2docker.iso to /Users/nps/.docker/machine/machines/node1/boot2docker.iso...
+(node1) Creating VirtualBox VM...
+(node1) Creating SSH key...
+(node1) Starting the VM...
+(node1) Check network to re-create if needed...
+(node1) Waiting for an IP...
+Waiting for machine to be running, this may take a few minutes...
+Detecting operating system of created instance...
+Waiting for SSH to be available...
+Detecting the provisioner...
+Provisioning with boot2docker...
+Copying certs to the local machine directory...
+Copying certs to the remote machine...
+Setting Docker configuration on the remote daemon...
+Checking connection to Docker...
+Docker is up and running!
+To see how to connect your Docker Client to the Docker Engine running on this virtual machine, run: docker-machine env node1
+```
+
+Få komando til at forbinde til node1
+
+```
+$ docker-machine env node1
+export DOCKER_TLS_VERIFY="1"
+export DOCKER_HOST="tcp://192.168.99.103:2376"
+export DOCKER_CERT_PATH="/Users/nps/.docker/machine/machines/node1"
+export DOCKER_MACHINE_NAME="node1"
+# Run this command to configure your shell: 
+# eval $(docker-machine env node1)
+```
+```
+$ eval $(docker-machine env node1)
+```
+
+Nu kommunikere Docker CLI med 'node1'
+
+Unset ENV for 'node1' så vi igen snakker med den lokale docker host
+
+```
+$ eval $(docker-machine env -u)
+```
+
+List maskiner
+
+```
+$ docker-machine ls
+```
+
+Slet en maskine
+
+```
+$ docker-machine rm node1
+```
