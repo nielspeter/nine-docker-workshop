@@ -98,7 +98,7 @@ $ docker rmi nginxdemos/hello
 
 
 
-Container uden bagrundsprocess ()
+Container uden bagrundsprocess
 ---
 
 [Docker Run doc](https://docs.docker.com/engine/reference/run/)
@@ -345,19 +345,19 @@ Container netværks kommunikation
 Opret et netværk
 
 ```
-$docker network create redis_network
+$ docker network create redis_network
 ```
 
 Start Redis og brug det nye netværk (uden -p denne gang)
 
 ```
-docker run --name min-redis --rm --network=redis_network redis
+$ docker run --name min-redis --rm --network=redis_network redis
 ```
 
 Snak med 'min-redis' via Redis klient (navnet på container er 'host' navnet - docker dns)
 
 ```
-docker run --name min-redis-cli -it --rm --network=redis_network redis redis-cli -h min-redis -p 6379
+$ docker run --name min-redis-cli -it --rm --network=redis_network redis redis-cli -h min-redis -p 6379
 ```
 
 Inspect redis_network - kan se de 2 containers
