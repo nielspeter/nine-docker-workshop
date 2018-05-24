@@ -166,7 +166,7 @@ Arbejde med en kørende container
 Start en container med bagrundsprocess
 
 ```
-$ docker run -d --name hello nginxdemos/hello
+$ docker run -d --name hello -p 80:80 nginxdemos/hello
 ```
 
 Se logfiler
@@ -230,7 +230,7 @@ $ docker container cp hello:a.txt .
 Kopiere en fil fra lokale maskine til container
 
 ```
-$ docker container cp hello:a.txt .
+$ docker container cp a.txt hello:a.txt
 ```
 
 Stop
