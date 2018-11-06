@@ -20,6 +20,10 @@ Denne demo består af:
 Det eneste du skal gøre er: 
 * Installer Docker https://store.docker.com/search?type=edition&offering=community
 * OBS! Se til at Docker har min 4GB ram tildelt. (På Mac er det under Docker -> Preferences -> Advanced)
+* OBS! Hvis du kører Ubuntu, så skal du køre følgende kommando for at Elastisearch vil starte. Se https://hub.docker.com/r/blacktop/elasticsearch/
+```
+sudo sysctl -w vm.max_map_count=262144
+```
 * Køre følgende kommandoer
 
 ### Uden GIT
