@@ -2,8 +2,6 @@
 
 For dig som gerne vil vide noget mere om Docker.
 
-Vi har lavet et screencast af hvordan du installerer Docker på din maskine. Den kan du se her https://drive.google.com/file/d/1iCCzUB5m8DHpRcbJD2PEnniXrdlYL9y2/view?usp=sharing
-
 
 ## Slides
 
