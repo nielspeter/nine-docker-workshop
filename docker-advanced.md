@@ -378,7 +378,8 @@ docker service logs redis
 
 ## Docker Stack
 
-stack.yml 
+* [Nine Docker Workshop - Github] (https://github.com/nielspeter/nine-docker-workshop)
+* [stack.yml] (https://github.com/nielspeter/nine-docker-workshop/blob/master/stack.yml)
 
 ```
 version: "3.7"
@@ -399,16 +400,35 @@ secrets:
     external: true
 ```
 
-docker stack ls
+List stacks
 
+```
+docker stack ls
+```
+
+Deploy en stack fra en docker-compose fil
+
+```
 docker stack deploy --compose-file stack.yml hello-stack
+```
 
+List stacks
+
+```
 docker stack ls
+```
 
+List services i hello-stack
+
+```
 docker stack services hello-stack
+```
 
+Slet hello-stack
+
+```
 docker stack rm hello-stack
-
+```
 
 ## Kubernetes - Minikube
 
