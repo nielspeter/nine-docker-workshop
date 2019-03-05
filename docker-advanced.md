@@ -26,7 +26,7 @@ Docker Advanced
 
 Der er primært Docker Swarm og Kubernetes hvor kubernetes et klar den største.
 
-* [Kubernetes] (https://kubernetes.io/)
+* [Kubernetes](https://kubernetes.io/)
 * [Docker Swarm](https://docs.docker.com/engine/swarm/)
 
 ![alt text](https://www.docker.com/sites/default/files/d8/styles/large/public/2018-11/swarm%2Bkubernetes.png "Docker Swarm og Kubernetes")
