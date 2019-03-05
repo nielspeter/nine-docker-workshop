@@ -1,0 +1,16 @@
+version: "3.7"
+
+services:
+
+  hello-service:
+    image: nginxdemos/hello:latest
+    deploy:
+      replicas: 2
+    ports:
+      - "8090:80"
+    secrets:
+      - my_secret_data
+      
+secrets:
+  my_secret_data:
+    external: true

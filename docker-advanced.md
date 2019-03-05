@@ -378,26 +378,78 @@ docker service logs redis
 
 ## Docker Stack
 
+stack.yml 
+
 ```
-  redis:
-    image: redis:5
-    hostname: mit.test.virk.dk
+version: "3.7"
+
+services:
+
+  hello-service:
+    image: nginxdemos/hello:latest
     deploy:
-      replicas: 1
-      placement:
-        constraints: [node.labels.datanode == true]
+      replicas: 2
     ports:
-      - "6379:6379"
+      - "8090:80"
+    secrets:
+      - my_secret_data
+      
+secrets:
+  my_secret_data:
+    external: true
 ```
+
+docker stack ls
+
+docker stack deploy --compose-file stack.yml hello-stack
+
+docker stack ls
+
+docker stack services hello-stack
+
+docker stack rm hello-stack
+
 
 ## Kubernetes - Minikube
 
+Start minikube cluster
+
 ```
 minikube start
+```
+
+Start pod
+
+```
 kubectl run hello-minikube --image=gcr.io/google_containers/echoserver:1.4 --port=8080
+```
+
+Eksponere deployment
+
+```
 kubectl expose deployment hello-minikube  --type=NodePort
+```
+
+Hent pods
+
+```
 kubectl get pod
+```
+
+Hent url
+
+```
 curl $(minikube service hello-minikube --url)
+```
+
+Slet deployemt
+
+```
 kubectl delete deployment hello-minikube
+```
+
+Stop Minikube
+
+```
 minikube stop
 ```
