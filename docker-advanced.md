@@ -474,3 +474,7 @@ Stop Minikube
 ```
 minikube stop
 ```
+
+Eksempel
+
+[Guestbook Example](https://gitlab.cncf.ci/kubernetes/kubernetes/tree/1122bf2c58da6812dcecc9d5e3688ad6b693830e/examples/guestbook)
