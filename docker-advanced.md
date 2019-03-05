@@ -378,8 +378,9 @@ docker service logs redis
 
 ## Docker Stack
 
-* [Nine Docker Workshop - Github] (https://github.com/nielspeter/nine-docker-workshop)
-* [stack.yml] (https://github.com/nielspeter/nine-docker-workshop/blob/master/stack.yml)
+* [Nine Docker Workshop - Github](https://github.com/nielspeter/nine-docker-workshop)
+* [stack.yml](https://github.com/nielspeter/nine-docker-workshop/blob/master/stack.yml)
+* [docker compose yml - deploy](https://docs.docker.com/compose/compose-file/#deploy)
 
 ```
 version: "3.7"
